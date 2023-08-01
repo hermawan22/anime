@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GTL - Anime List",
+  title: "Anime List",
 };
 
 export default function RootLayout({

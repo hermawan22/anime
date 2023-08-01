@@ -120,12 +120,12 @@ const AnimeDetails = ({ id }: any) => {
           }
         `}
       >
-        <div className="banner">
+        {banner &&<div className="banner">
           <Image src={banner} alt={title} fill={true} />
-        </div>
+        </div>}
         <div className="container">
           <div className="cover">
-            <Image src={cover} alt={title} width={200} height={200} />
+            {cover && <Image src={cover} alt={title} width={200} height={200} />}
 
             {found(id) ? (
               <button className="collected">
@@ -138,8 +138,8 @@ const AnimeDetails = ({ id }: any) => {
             )}
           </div>
           <div className="content">
-            <div className="title">{title}</div>
-            <div className="description">{description}</div>
+            {title && <div className="title">{title}</div>}
+            {description && <div className="description">{description}</div>}
           </div>
         </div>
       </div>
