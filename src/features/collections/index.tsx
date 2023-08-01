@@ -101,7 +101,7 @@ const Collection = () => {
   return (
     <div>
       {getCollection() &&
-        getCollection().map((name: string) => {
+        getCollection().map((name: any) => {
           const key = Object.keys(name)[0];
 
           return (

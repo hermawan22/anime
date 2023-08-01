@@ -4,15 +4,15 @@ import { safeGet } from "@/helper";
 import Item from "./item";
 
 const List = ({ data }: any) => {
-  const [hover, setHover] = useState();
+  const [hover, setHover] = useState<number | undefined>(0);
   const media = safeGet(data, "Page.media");
 
-  const handleMouseEnter = (id: number | SetStateAction<undefined>) => {
+  const handleMouseEnter = (id: any | SetStateAction<undefined>) => {
     setHover(id);
   };
 
   const handleMouseLeave = () => {
-    setHover(null);
+    setHover(0);
   };
 
   return (
@@ -44,11 +44,12 @@ const List = ({ data }: any) => {
                 onMouseEnter={(e) => handleMouseEnter(value.id)}
                 onMouseLeave={handleMouseLeave}
               >
-                {/* {hover === value.id ? (
-                  <ListHover id={value.id} myData={value} />
-                ) : ( */}
-                  <Item id={value.id} hover={hover} title={value.title.english} image={safeGet(value, "coverImage.large") || ""} />
-                {/* )} */}
+                <Item
+                  id={value.id}
+                  hover={hover}
+                  title={value.title.english}
+                  image={safeGet(value, "coverImage.large") || ""}
+                />
               </div>
             );
           }

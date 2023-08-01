@@ -55,10 +55,10 @@ const Navbar = () => {
       `}
     >
       <ul>
-        <li className={pathname === '/' && "active"}>
+        <li className={pathname === '/' ? "active" : ""}>
           <Link href="/">Home</Link>
         </li>
-        <li className={pathname === '/collections' && "active"}>
+        <li className={pathname === '/collections' ? "active" : ""}>
           <Link href="/collections">Collections</Link>
         </li>
         {/* <li className="right">Add bulk collection</li> */}

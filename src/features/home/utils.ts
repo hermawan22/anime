@@ -7,7 +7,7 @@ export const found = (id: number) => {
   const parsedCollection =
   collection && JSON.parse(collection);
   let foundId = false;
-  parsedCollection && parsedCollection.forEach((name: string) => {
+  parsedCollection && parsedCollection.forEach((name: any) => {
     const key = Object.keys(name)[0];
 
     name[key].forEach((collection: any) => {
